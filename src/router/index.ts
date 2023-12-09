@@ -16,17 +16,32 @@ const routes = [
       },
     ],
   },
+
+  // {
+  //   path: '/',
+  //   component: () => import('@/components/Dashboard.vue'),
+  // },
+  // {
+  //   path: '/campaigns',
+  //   component: () => import('@/components/campaign/CampaignList.vue'),
+  // },
+
   {
     path: '/',
     component: () => import('@/layouts/App.vue'),
     children: [
       {
-        path: '',
+        path: '/',
         name: 'Home',
+        component: () => import('@/views/Home.vue'),
+      },
+      {
+        path: '/campaigns',
+        name: 'Campaigns',
         // route level code-splitting
         // this generates a separate chunk (Home-[hash].js) for this route
         // which is lazy-loaded when the route is visited.
-        component: () => import('@/views/Home.vue'),
+        component: () => import('@/views/campaign/CampaignList.vue'),
       },
     ],
   },

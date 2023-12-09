@@ -8,7 +8,9 @@
                     append-inner-icon="mdi-email" class="mb-2" />
                 <v-text-field type="password" v-model="password" label="Password" density="compact" single-line hide-details
                     append-inner-icon="mdi-key" class="mb-2" />
-                <v-btn type="submit" block v-text="'Sign in'" to="/" />
+                <transition name="bounce">
+                    <v-btn type="submit" block v-text="'Sign in'" to="/" />
+                </transition>
             </v-form>
 
 
@@ -34,3 +36,40 @@ export default {
 }
 </script>
   
+<style scoped>
+.bounce-enter-active {
+    animation: bounce-in 3.5s;
+}
+
+.bounce-leave-active {
+    animation: bounce-out 3.5s;
+}
+
+@keyframes bounce-in {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce-out {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+</style>

@@ -1,11 +1,13 @@
 <template>
   <v-app>
     <particles />
-    <default-view />
+
+    <v-main>
+      <router-view />
+    </v-main>
   </v-app>
 </template>
 
 <script lang="ts" setup>
-import DefaultView from './View.vue'
-import Particles from "../components/common/Particles.vue";
+import Particles from "./common/Particles.vue";
 </script>
