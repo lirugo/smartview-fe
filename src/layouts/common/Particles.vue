@@ -19,7 +19,7 @@ export default {
                 interactivity: {
                     events: {
                         onClick: {
-                            enable: true, // enables the click event, it's disabled by default
+                            enable: false, // enables the click event, it's disabled by default
                             mode: "push", // adds the particles on click
                         },
                         onHover: {

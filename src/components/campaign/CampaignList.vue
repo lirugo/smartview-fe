@@ -4,7 +4,6 @@
 
       <v-col cols="12">
         <v-card>
-          <v-btn to="/" color="primary">Home</v-btn>
           <v-table>
             <thead>
               <tr>

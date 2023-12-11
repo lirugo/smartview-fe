@@ -4,7 +4,6 @@
 
       <v-col v-for="card in cards" :key="card" cols="12">
         <v-card>
-          <v-btn to="/campaigns" color="primary">Campaigns</v-btn>
           <v-list lines="two">
             <v-list-subheader to="/campaigns" :title="card"></v-list-subheader>
 

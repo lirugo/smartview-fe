@@ -1,21 +1,18 @@
 <template>
-    <v-navigation-drawer expand-on-hover rail>
+    <v-navigation-drawer>
         <v-list>
             <v-list-item prepend-avatar="https://randomuser.me/api/portraits/women/85.jpg" title="Sandra Adams"
-                subtitle="sandra_a88@gmailcom"></v-list-item>
+                subtitle="sandra@gmail.com"></v-list-item>
         </v-list>
 
         <v-divider></v-divider>
 
         <v-list density="compact" nav>
-            <v-list-item prepend-icon="mdi-folder" title="My Files" value="myfiles"></v-list-item>
-            <v-list-item prepend-icon="mdi-account-multiple" title="Shared with me" value="shared"></v-list-item>
-            <v-list-item prepend-icon="mdi-star" title="Starred" value="starred"></v-list-item>
+            <v-list-item v-for="item in items" :key="item.href" :title="item.title" :to="item.href" exact
+                :prepend-icon="item.icon" />
         </v-list>
 
-        <!-- Your existing code -->
-
-        <v-spacer></v-spacer> <!-- This will push the button to the bottom -->
+        <v-spacer></v-spacer>
 
         <template v-slot:append>
             <v-list density="compact" nav>
@@ -27,6 +24,17 @@
 </template>
 
 <script lang="ts" setup>
+
+let items = [
+    { title: 'Dashboard', icon: 'mdi-view-dashboard-outline', href: '/' },
+    { title: 'Campaigns', icon: 'mdi-newspaper-variant-multiple', href: '/campaigns' },
+    { title: 'Company', icon: 'mdi-file-compare', href: '/companies' },
+    { title: 'Partners', icon: 'mdi-handshake-outline', href: '/partners' },
+    { title: 'Users', icon: 'mdi-account-group-outline', href: '/users' },
+    { title: 'Titles', icon: 'mdi-format-title', href: '/titles' },
+    { title: 'Reports', icon: 'mdi-file-excel-outline', href: '/reports' },
+];
+
 const signOut = () => {
     // Your sign out logic here
     console.log('Signing out...');
