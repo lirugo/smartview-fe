@@ -6,6 +6,7 @@
     <app-bar />
 
     <v-main>
+      <loader />
       <router-view v-slot="{ Component }">
         <transition name="route" mode="out-in">
           <component :is="Component" />
@@ -16,6 +17,7 @@
 </template>
 
 <script lang="ts" setup>
+import Loader from './common/Loader.vue'
 import AppBar from './common/AppBar.vue'
 import NavigationDrawer from './common/NavigationDrawer.vue'
 import Particles from "./common/Particles.vue";

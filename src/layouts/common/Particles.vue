@@ -32,7 +32,7 @@ export default {
                             quantity: 10, // number of particles to add on click
                         },
                         repulse: {
-                            distance: 300, // distance of the particles from the cursor
+                            distance: 150, // distance of the particles from the cursor
                         },
                     },
                 },
